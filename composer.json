@@ -1,0 +1,10 @@
+{
+    "name": "nginx/demo",
+    "authors": [
+        {
+            "name": "wuchuheng",
+            "email": "wuchuheng@163.com"
+        }
+    ],
+    "require": {}
+}
