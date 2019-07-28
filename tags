@@ -7,12 +7,16 @@
 ClassLoader	./vendor/composer/ClassLoader.php	/^class ClassLoader$/;"	c	language:PHP
 ComposerAutoloaderInit642d5c396b2ab3ee04914e4a4c40931c	./vendor/composer/autoload_real.php	/^class ComposerAutoloaderInit642d5c396b2ab3ee04914e4a4c40931c$/;"	c	language:PHP
 ComposerStaticInit642d5c396b2ab3ee04914e4a4c40931c	./vendor/composer/autoload_static.php	/^class ComposerStaticInit642d5c396b2ab3ee04914e4a4c40931c$/;"	c	language:PHP
-HandlerException	./app/exception/HandlerException.php	/^class HandlerException$/;"	c	language:PHP
+HandlerException	./app/exception/HandlerException.php	/^class HandlerException extends \\Exception$/;"	c	language:PHP
+RestBaseException	./app/exception/RestBaseException.php	/^class RestBaseException extends\\Exception$/;"	c	language:PHP
+ValidateException	./app/exception/ValidateException.php	/^class  ValidateException extends RestBaseException$/;"	c	language:PHP
+__construct	./app/exception/RestBaseException.php	/^    public function __construct(array $args = []) $/;"	f	language:PHP
 add	./vendor/composer/ClassLoader.php	/^    public function add($prefix, $paths, $prepend = false)$/;"	f	language:PHP
 addClassMap	./vendor/composer/ClassLoader.php	/^    public function addClassMap(array $classMap)$/;"	f	language:PHP
 addPsr4	./vendor/composer/ClassLoader.php	/^    public function addPsr4($prefix, $paths, $prepend = false)$/;"	f	language:PHP
 apcuPrefix	./vendor/composer/ClassLoader.php	/^        $this->apcuPrefix = function_exists('apcu_fetch') && filter_var(ini_get('apc.enabled'), FILTER_VALIDATE_BOOLEAN) ? $apcuPrefix : null;$/;"	v	language:PHP
 apcuPrefix	./vendor/composer/ClassLoader.php	/^    private $apcuPrefix;$/;"	v	language:PHP
+args	./app/exception/RestBaseException.php	/^    public function __construct(array $args = []) $/;"	v	language:PHP
 baseDir	./vendor/composer/autoload_classmap.php	/^$baseDir = dirname($vendorDir);$/;"	v	language:PHP
 baseDir	./vendor/composer/autoload_namespaces.php	/^$baseDir = dirname($vendorDir);$/;"	v	language:PHP
 baseDir	./vendor/composer/autoload_psr4.php	/^$baseDir = dirname($vendorDir);$/;"	v	language:PHP
@@ -22,7 +26,13 @@ classMap	./vendor/composer/ClassLoader.php	/^    private $classMap = array();$/;
 classMap	./vendor/composer/autoload_real.php	/^            $classMap = require __DIR__ . '\/autoload_classmap.php';$/;"	v	language:PHP
 classMapAuthoritative	./vendor/composer/ClassLoader.php	/^        $this->classMapAuthoritative = $classMapAuthoritative;$/;"	v	language:PHP
 classMapAuthoritative	./vendor/composer/ClassLoader.php	/^    private $classMapAuthoritative = false;$/;"	v	language:PHP
+code	./app/exception/RestBaseException.php	/^            $this->code = $args['code'];$/;"	v	language:PHP
+code	./app/exception/RestBaseException.php	/^    public $code = 404; \/\/ http 状态码$/;"	v	language:PHP
+code	./app/exception/ValidateException.php	/^    public $code = 404;$/;"	v	language:PHP
 does	./vendor/composer/ClassLoader.php	/^            \/\/ Remember that this class does not exist.$/;"	c	language:PHP
+errorCode	./app/exception/RestBaseException.php	/^            $this->errorCode = $args['errorCode'];$/;"	v	language:PHP
+errorCode	./app/exception/RestBaseException.php	/^    public $errorCode = 4000; \/\/ 接口错误码$/;"	v	language:PHP
+errorCode	./app/exception/ValidateException.php	/^    public $errorCode = 4000;$/;"	v	language:PHP
 fallbackDirsPsr0	./vendor/composer/ClassLoader.php	/^                $this->fallbackDirsPsr0 = array_merge($/;"	v	language:PHP
 fallbackDirsPsr0	./vendor/composer/ClassLoader.php	/^            $this->fallbackDirsPsr0 = (array) $paths;$/;"	v	language:PHP
 fallbackDirsPsr0	./vendor/composer/ClassLoader.php	/^    private $fallbackDirsPsr0 = array();$/;"	v	language:PHP
@@ -69,6 +79,9 @@ map	./vendor/composer/ClassLoader.php	/^     * that have not been registered wit
 map	./vendor/composer/autoload_real.php	/^            $map = require __DIR__ . '\/autoload_namespaces.php';$/;"	v	language:PHP
 map	./vendor/composer/autoload_real.php	/^            $map = require __DIR__ . '\/autoload_psr4.php';$/;"	v	language:PHP
 missingClasses	./vendor/composer/ClassLoader.php	/^    private $missingClasses = array();$/;"	v	language:PHP
+msg	./app/exception/RestBaseException.php	/^            $this->msg = $args['msg'];$/;"	v	language:PHP
+msg	./app/exception/RestBaseException.php	/^    public $msg = ''; \/\/ 错误详情$/;"	v	language:PHP
+msg	./app/exception/ValidateException.php	/^    public $msg = '验证异常';$/;"	v	language:PHP
 name	./vendor/composer/ClassLoader.php	/^            \/\/ PEAR-like class name$/;"	c	language:PHP
 name	./vendor/composer/ClassLoader.php	/^            \/\/ namespaced class name$/;"	c	language:PHP
 namespace	./vendor/composer/autoload_real.php	/^            foreach ($map as $namespace => $path) {$/;"	v	language:PHP
@@ -84,6 +97,7 @@ prefixesPsr0	./vendor/composer/ClassLoader.php	/^    private $prefixesPsr0 = arr
 prepend	./vendor/composer/ClassLoader.php	/^    public function add($prefix, $paths, $prepend = false)$/;"	v	language:PHP
 prepend	./vendor/composer/ClassLoader.php	/^    public function addPsr4($prefix, $paths, $prepend = false)$/;"	v	language:PHP
 register	./vendor/composer/ClassLoader.php	/^    public function register($prepend = false)$/;"	f	language:PHP
+render	./app/exception/HandlerException.php	/^    public function render($e) $/;"	f	language:PHP
 search	./vendor/composer/ClassLoader.php	/^                $search = $subPath . '\\\\';$/;"	v	language:PHP
 set	./vendor/composer/ClassLoader.php	/^    public function set($prefix, $paths)$/;"	f	language:PHP
 setApcuPrefix	./vendor/composer/ClassLoader.php	/^    public function setApcuPrefix($apcuPrefix)$/;"	f	language:PHP
@@ -92,7 +106,6 @@ setPsr4	./vendor/composer/ClassLoader.php	/^    public function setPsr4($prefix,
 setUseIncludePath	./vendor/composer/ClassLoader.php	/^    public function setUseIncludePath($useIncludePath)$/;"	f	language:PHP
 subPath	./vendor/composer/ClassLoader.php	/^                $subPath = substr($subPath, 0, $lastPos);$/;"	v	language:PHP
 subPath	./vendor/composer/ClassLoader.php	/^            $subPath = $class;$/;"	v	language:PHP
-test	./app/exception/HandlerException.php	/^    public function test() {$/;"	f	language:PHP
 under	./vendor/composer/ClassLoader.php	/^ * the autoloader will first look for the class under the component\/$/;"	c	language:PHP
 unregister	./vendor/composer/ClassLoader.php	/^    public function unregister()$/;"	f	language:PHP
 useIncludePath	./vendor/composer/ClassLoader.php	/^        $this->useIncludePath = $useIncludePath;$/;"	v	language:PHP
