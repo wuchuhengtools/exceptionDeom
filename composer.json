@@ -6,5 +6,10 @@
             "email": "wuchuheng@163.com"
         }
     ],
+    "autoload": {
+        "psr-4":{
+            "app\\": "."
+        }
+    },
     "require": {}
 }
